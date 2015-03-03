@@ -45,6 +45,9 @@ stoneImage.src = "images/stone.png";
 // monster image
 var monsterReady = false;
 var monsterImage = new Image();
+monsterImage.onload = function () {
+	monsterReady = true;
+};
 monsterImage.src = "images/monster.png";
 
 // Game objects
@@ -166,8 +169,6 @@ var render = function () {
 	if (stoneReady) {
 		ctx.drawImage(stoneImage, stone.x, stone.y);
 	}
-	
-	
 
 	// Score
 	ctx.fillStyle = "rgb(250, 250, 250)";
